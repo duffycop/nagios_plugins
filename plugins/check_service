@@ -21,7 +21,7 @@ print_help() {
     echo "$PROGNAME is a Nagios plugin to check a specific service using systemctl."
     echo ""
     echo "$PROGNAME -s <service_name>"
-    exit $ST_UK
+    exit $UNKNOWN
 }
 
 if test -z "$1"
@@ -34,11 +34,11 @@ while test -n "$1"; do
     case "$1" in
         --help|-h)
             print_help
-            exit $ST_UK
+            exit $UNKNOWN
             ;;
         --version|-v)
             print_version $PROGNAME $VERSION
-            exit $ST_UK
+            exit $UNKNOWN
             ;;
         --service|-s)
             SERVICE=$2
@@ -47,7 +47,7 @@ while test -n "$1"; do
         *)
             echo "Unknown argument: $1"
             print_help
-            exit $ST_UK
+            exit $UNKNOWN
             ;;
         esac
     shift
