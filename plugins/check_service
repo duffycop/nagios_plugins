@@ -9,7 +9,7 @@ CRITICAL=2
 UNKNOWN=3
 
 PROGNAME=`basename $0 .sh`
-VERSION="Version 1.0"
+VERSION="Version 1.1"
 
 print_version() {
     echo "$VERSION"
